@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DeviseTest</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <% if pupil_signed_in? %>
+    <h1> Pupil is Signed In!</h1>
+  <% end %>
+
+  <% if teacher_signed_in? %>
+    <h1> Teacher is Signed In!</h1>
+  <% end %>  
+
+  <%= link_to "sign out", destroy_teacher_session_path, method: :delete %>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
